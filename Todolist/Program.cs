@@ -1,8 +1,12 @@
 ﻿
 int[] PlusOne(int[] digits)
 {
-
+    char[] sym = new char[] { };
     long num = 0;
+    int k = 0;
+    int[] digit2 = new int[] {};
+
+
 
     int l = 0;
     string str = "";
@@ -21,13 +25,13 @@ int[] PlusOne(int[] digits)
     int enter6 = 0;
 
     char firstChar = '0';
+    string numString = "";
+
+    
 
 
-    char[] sym = new char[] { };
 
-
-
-    int k = 0;
+    
 
     int[] newDigits = new int[] { };
 
@@ -73,44 +77,106 @@ int[] PlusOne(int[] digits)
         case 1:
             if (firstChar == str1[0])
             {
-
+                if(digits.Length == 1)
+                {
+                    return digit2 = new int[]{ 1 };
+                }
+                
+                num = long.Parse(str1) + 1;
+                numString = "0" + num.ToString();
+                sym = numString.ToCharArray();
             }
-            num = long.Parse(str1) + 1;
-            sym = num.ToString().ToCharArray();
+            else
+            {
+                num = long.Parse(str1) + 1;
+                sym = num.ToString().ToCharArray();
+            }
+            
             break;
         case 2:
-            num = long.Parse(str2) + 1;
-            str = str1 + num.ToString();
-            sym = str.ToCharArray();
-            break;
+            if (firstChar == str2[0])
+            {
+                num = long.Parse(str2) + 1;
+                numString = str1 + "0" + num.ToString();
+                sym = numString.ToCharArray();
+            }
+            else
+            {
+                num = long.Parse(str2) + 1;
+                str = str1 + num.ToString();
+                sym = str.ToCharArray();
+               
+            }
+             break;
         case 3:
-            num = long.Parse(str3) + 1;
-            str = str1 + str2 + num.ToString();
-            sym = str.ToCharArray();
+            if (firstChar == str3[0])
+            {
+                num = long.Parse(str3) + 1;
+                numString = str1 + str2 + "0" + num.ToString();
+                sym = numString.ToCharArray();
+            }
+            else
+            {
+                num = long.Parse(str3) + 1;
+                str = str1 + str2 + num.ToString();
+                sym = str.ToCharArray();
+            }
+
+           
             break;
         case 4:
-            num = long.Parse(str4) + 1;
-            str = str1 + str2 + str3 + num.ToString();
-            sym = str.ToCharArray();
+            if (firstChar == str4[0])
+            {
+                num = long.Parse(str4) + 1;
+                numString = str1 + str2 + str3 + "0" + num.ToString();
+                sym = numString.ToCharArray();
+            }
+            else
+            {
+                num = long.Parse(str4) + 1;
+                str = str1 + str2 + str3 + num.ToString();
+                sym = str.ToCharArray();
+            }
+            
             break;
         case 5:
-            num = long.Parse(str5) + 1;
-            str = str1 + str2 + str3 + str4 + num.ToString();
-            sym = str.ToCharArray();
+            if (firstChar == str5[0])
+            {
+                num = long.Parse(str5) + 1;
+                numString = str1 + str2 + str3 + str4 + "0" + num.ToString();
+                sym = numString.ToCharArray();
+            }
+            else
+            {
+                num = long.Parse(str5) + 1;
+                str = str1 + str2 + str3 + str4 + num.ToString();
+                sym = str.ToCharArray();
+            }
+            
             break;
         case 6:
-            num = long.Parse(str6) + 1;
-            str = str1 + str2 + str3 + str4 + str5 + num.ToString();
-            sym = str.ToCharArray();
+            if (firstChar == str6[0])
+            {
+                num = long.Parse(str6) + 1;
+                numString = str1 + str2 + str3 + str4 + str5 + "0" + num.ToString();
+                sym = numString.ToCharArray();
+            }
+            else
+            {
+                num = long.Parse(str6) + 1;
+                str = str1 + str2 + str3 + str4 + str5 + num.ToString();
+                sym = str.ToCharArray();
+            }
+           
             break;
     }
 
 
 
 
-
     k = sym.Length;
-    int[] digit2 = new int[k];
+    digit2 = new int[k];
+
     for (int i = 0; i < digit2.Length; i++)
     {
         digit2[i] = int.Parse(string.Concat(sym[i]));
@@ -123,5 +189,5 @@ int[] PlusOne(int[] digits)
 }
 
 Console.WriteLine();
-int[] num = new int[] { 9, 7, 0, 1, 4, 1, 2, 8, 0, 2, 2, 3, 8, 1, 7, 2, 5, 0, 7, 8, 8 };
+int[] num = new int[] { 1, 2, 3 };
 Console.WriteLine($"Number out:{PlusOne(num)}");
